@@ -1,0 +1,3 @@
+bootargs=console=ttyO1,115200n8 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait;
+bootcmd=mmc rescan ; mmc dev 0 ; fatload mmc 0 0x80007fc0 uImage ; fatload mmc 0 0x80F80000 am335x-bbb-exp.dtb ; bootm 0x80007fc0 - 0x80F80000;
+uenvcmd=boot;
