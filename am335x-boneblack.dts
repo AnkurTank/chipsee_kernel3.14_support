@@ -37,7 +37,7 @@
 				0x9c 0x7	/* gpmc_ben0_cle.gpio2_5, OUTPUT | MODE7 */
                         >;
                 };
-			chipsee_lcd_pins: pinmux_chipsee_lcd_pins {
+		chipsee_lcd_pins: pinmux_chipsee_lcd_pins {
 			pinctrl-single,pins = <
 				0xa0 0x00       /* lcd_data0.lcd_data0, OMAP_MUX_MODE0 | AM33XX_PIN_OUTPUT */
 				0xa4 0x00       /* lcd_data1.lcd_data1, OMAP_MUX_MODE0 | AM33XX_PIN_OUTPUT */
@@ -149,10 +149,11 @@
                 };
 		*/
 };
-
+/*
 &lcdc {
 	status = "okay";
 };
+*/ 
 &mcasp0 {
         pinctrl-names = "default";
         pinctrl-0 = <&chipsee_audio_pins>;
@@ -380,9 +381,11 @@
                 };
 
                 panel {
-                        compatible = "tilcdc,panel";
+                        /*compatible = "tilcdc,panel";*/
+						compatible = "ti,tilcdc,panel";
                         pinctrl-names = "default";
                         pinctrl-0 = <&chipsee_lcd_pins>;
+						status = "okay";
                         panel-info {
                                 ac-bias           = <255>;
                                 ac-bias-intrpt    = <0>;
@@ -416,8 +419,9 @@
 		};
  
 
-                fb {
+                lcdc {
                         compatible = "ti,am33xx-tilcdc";
+			status = "okay";
                         reg = <0x4830e000 0x1000>;
                         interrupt-parent = <&intc>;
                         interrupts = <36>;
