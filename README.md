@@ -19,3 +19,10 @@ with one provided in this repo.
 Attention!!!! As of today i.e. 14/10/2014 i am not able to see Angstrom UI but i am able to see prompt on serial terminal
 
 This files will be updated as and when i have some progess on making LCD work.
+
+Update:
+========
+I could bring up the Chipsee LCD by compiling Linux kernel seperately from Robert Nelson's kernel branch i.e. https://github.com/beagleboard/linux
+
+I am yet to create Linux custom kernel recipe for the same but meantime if you want to bring up Chipsee LCD + Yocto + kernel 3.14 follow steps mentioned in answer of stack overflow website.
+http://stackoverflow.com/questions/30723261/building-robert-nelsons-linux-kernel-into-yoctodaisy-for-beaglebone-black/30833458#30833458 
